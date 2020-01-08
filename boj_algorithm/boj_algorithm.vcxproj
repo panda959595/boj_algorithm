@@ -246,6 +246,7 @@
     <ClCompile Include="..\..\..\..\Downloads\boj_algorithm-master\boj_algorithm\6439.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="1019.cpp" />
     <ClCompile Include="10471.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
