@@ -25,16 +25,16 @@ void zfunc(long long n) {
 	}
 	int index;
 	for (int i = 1; temp * 10 <= n; i++) {
-		for (int j = 0; j < 10; j++) {
-			ans[j] += zrr[i][j];
-		}
 		index = i;
 		temp *= 10;
 	}
 	for (int i = 0; i < 10; i++) {
+		ans[i] += zrr[index][i];
+	}
+	for (int i = 0; i < 10; i++) {
 		ans[i] += zrr[index][i] * (n / temp - 1);
 	}
-	for (int i = 1; i < n / temp; i++) {
+	for (int i = 0; i < n / temp; i++) {
 		ans[i] += temp;
 	}
 	ans[n / temp] += n % temp + 1;
@@ -75,7 +75,7 @@ void func(long long n) {
 	}
 	for (int i = 1; i < n / temp; i++) {
 		ans[i] += temp;
-0	}
+	}
 	ans[n / temp] += n % temp + 1;
 	if (n == temp) {
 		ans[0] += index;
@@ -109,16 +109,13 @@ int main() {
 		}
 	}
 	long long n;
-	while (1) {
-		for (int i = 0; i < 10; i++) {
-			ans[i] = 0;
-		}
-		cin >> n;
-		func(n);
-		for (int i = 0; i < 10; i++) {
-			cout << ans[i] << " ";
-		}
-		cout << endl;
+	for (int i = 0; i < 10; i++) {
+		ans[i] = 0;
+	}
+	cin >> n;
+	func(n);
+	for (int i = 0; i < 10; i++) {
+		cout << ans[i] << " ";
 	}
 	return 0;
 }
